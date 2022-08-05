@@ -76,15 +76,22 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'respare_new',
+#        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com',
+#        'USER':'wzxocqktgrtheu',
+#        'PORT':'5432',
+#        'PASSWORD':'40e054cd2f1eb6abef8374cdbf4f2f8c202971a93954450355ef740090fb5573'
+
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'respare_new',
-        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com',
-        'USER':'wzxocqktgrtheu',
-        'PORT':'5432',
-        'PASSWORD':'40e054cd2f1eb6abef8374cdbf4f2f8c202971a93954450355ef740090fb5573'
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
