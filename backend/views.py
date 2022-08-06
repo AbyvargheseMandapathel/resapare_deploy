@@ -7,7 +7,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
 from backend import models
 from backend.models import Reaction, Topic, Choice,Profile,Comment
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
