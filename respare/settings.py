@@ -81,11 +81,13 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'respare_new',
-        'HOST': 'localhost',
-        'USER':'root',
-        'PASSWORD':'password@123'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd77tbna0ddbh1t',
+        'HOST': 'ec2-44-205-64-253.compute-1.amazonaws.com
+',
+        'PORT': '5432'
+        'USER':'rfwbsxcchykzuq',
+        'PASSWORD':'837c9fc17b5741f42bda35345935b0ad854b5166a077dc21778f54c5e02513a8'
 
     }
 }
