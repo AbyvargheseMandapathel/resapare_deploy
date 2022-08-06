@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd77tbna0ddbh1t',
         'HOST': 'ec2-44-205-64-253.compute-1.amazonaws.com
 ',
