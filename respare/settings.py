@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b*8-dbaa)%cuk-ojs210*)xf=j*)zur2hh5(e-s2atp@!6y(d5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['resparev1.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,18 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'backend',
-    'auth_user',
+    'debug_toolbar',
+    'mathfilters',
+    'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware"
 ]
 
 ROOT_URLCONF = 'respare.urls'
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'respare.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'static')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,42 +75,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'respare.wsgi.application'
 
-#asdad
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'respare_new',
-#        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com',
-#        'USER':'wzxocqktgrtheu',
-#        'PORT':'5432',
-#        'PASSWORD':'40e054cd2f1eb6abef8374cdbf4f2f8c202971a93954450355ef740090fb5573'
-
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'respare_new',
+        'HOST': 'localhost',
+        'USER':'root',
+        'PASSWORD':'password@123'
+
     }
 }
 
-'''
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda r: False,  # disables it
-    # '...
-}
-'''
-'''
 INTERNAL_IPS = [
     # ...
     "127.0.0.1",
     # ...
 ]
-'''
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -143,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = 'static/'
-#STATICFILES_DIRS=[BASE_DIR/"backend/static"]
+STATICFILES_DIRS=[BASE_DIR/"backend/static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type

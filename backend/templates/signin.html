@@ -32,7 +32,7 @@
     <h1>respare.</h1></div>
   
       
-      <form action=""" method="post">
+      <form action="" method="post">
       {% csrf_token %}
        <div class="form-group">
           <label class="form-control-label">Username</label>
@@ -48,22 +48,6 @@
         </div>
         <div class="register form-control-label"><a href="/register">Dont Have An Account?</a></div>
     </form>
-    <script type="text/javascript">
-      function signin(){
-        fetch("/signin",{
-        method:'POST',
-        headers:{
-            'X-CSRFToken': jQuery("input[name=csrfmiddlewaretoken]").val(),
-            'Content-Type':'application/json'
-        },
-        })then(response=>{return response.json()})
-        .then(data=>{
-            if(data="1")
-              console.log("1");
-        })
-      }
-    
-    </script>
   
 
 
